@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" type="module"></script>
+    <title>Crypto-system</title>
+</head>
+
+<body>
+
+    <header class="bg-dark text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo d-flex align-items-center">
+                <img src="./assets/logo.svg" alt="logo" class="mr-2">
+                <h1>Crypto-system</h1>
+            </div>
+            <nav class="links">
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Anuncio</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    
+
+        <form id="anuncioForm">
+            <fieldset>
+                <legend>Información de la Moneda</legend>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingrese nombre...">
+                </div>
+                <div class="form-group">
+                    <label for="simbolo">Simbolo</label>
+                    <input type="text" id="simbolo" name="simbolo" class="form-control" placeholder="Ingrese simbolo...">
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio Actual (USD):</label>
+                    <input type="number" id="precio" name="precio" class="form-control" placeholder="Ingrese precio...">
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Tipo de Consenso </label>
+                    <select id="tipo" name="tipo" class="form-control">
+                        <option value="Proof of Work">Proof of Work</option>
+                        <option value="Proof of Stake">Proof of Stake</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cantidad">Cantidad en Circulacion</label>
+                    <input type="number" id="cantidad" name="cantidad" class="form-control" placeholder="Ingrese cantidad...">
+                </div>
+                <div class="form-group">
+                    <label for="algoritmo">Algoritmo</label>
+                    <select name="algoritmo" id="algoritmo" class="form-control">
+                        <option value="SHA-256">SHA-256</option>
+                        <option value="Ethash">Ethash</option>
+                        <option value="Scrypt">Scrypt</option>
+                        <option value="X11">X11</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="sitioWeb">Sitio web</label>
+                    <input type="text" id="sitioWeb" name="sitioWeb" class="form-control" placeholder="Ingrese sitio web...">
+                </div>
+                <button type="submit" class="btn btn-primary btnGuardar">Guardar</button>
+            </fieldset>
+        </form>
+
+
+
+
+        <div class="container my-4">
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="filtroAlgoritmo">Filtrar por Algoritmo</label>
+                        <select id="filtroAlgoritmo" class="form-control">
+                            <option value="all">Todos</option>
+                            <option value="SHA-256">SHA-256</option>
+                            <option value="Ethash">Ethash</option>
+                            <option value="Scrypt">Scrypt</option>
+                            <option value="X11">X11</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="promedioPrecio">Promedio de Precio:</label>
+                        <input type="text" id="promedioPrecio" class="form-control" readonly value="N/A">
+                    </div>
+                </div>
+            </div>
+    
+            
+            <div class="row mb-4">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="columnasMostrar">Seleccionar Columnas a Mostrar</label>
+                        <div id="columnasMostrar" class="d-flex flex-wrap">
+                            <div class="form-check mr-3">
+                                <input class="form-check-input" type="checkbox" value="nombre" id="colNombre" checked>
+                                <label class="form-check-label" for="colNombre">Nombre</label>
+                            </div>
+                            <div class="form-check mr-3">
+                                <input class="form-check-input" type="checkbox" value="simbolo" id="colSimbolo" checked>
+                                <label class="form-check-label" for="colSimbolo">Símbolo</label>
+                            </div>
+                            <div class="form-check mr-3">
+                                <input class="form-check-input" type="checkbox" value="fechaCreacion" id="colFechaCreacion" checked>
+                                <label class="form-check-label" for="colFechaCreacion">Fecha Creacion</label>
+                            </div>
+                            <div class="form-check mr-3">
+                                <input class="form-check-input" type="checkbox" value="precioActual" id="colPrecioActual" checked>
+                                <label class="form-check-label" for="colPrecioActual">Precio Actual</label>
+                            </div>
+                            <div class="form-check mr-3">
+                                <input class="form-check-input" type="checkbox" value="consenso" id="colConsenso" checked>
+                                <label class="form-check-label" for="colConsenso">Consenso</label>
+                            </div>
+                            <div class="form-check mr-3">
+                                <input class="form-check-input" type="checkbox" value="cantidadCirculacion" id="colCantidadCirculacion" checked>
+                                <label class="form-check-label" for="colCantidadCirculacion">Cantidad Circulacion</label>
+                            </div>
+                            <div class="form-check mr-3">
+                                <input class="form-check-input" type="checkbox" value="algoritmo" id="colAlgoritmo" checked>
+                                <label class="form-check-label" for="colAlgoritmo">Algoritmo</label>
+                            </div>
+                            <div class="form-check mr-3">
+                                <input class="form-check-input" type="checkbox" value="sitioWeb" id="colSitioWeb" checked>
+                                <label class="form-check-label" for="colSitioWeb">Sitio Web</label>
+                            </div>
+                            <div class="form-check mr-3">
+                                <input class="form-check-input" type="checkbox" value="acciones" id="colAcciones" checked>
+                                <label class="form-check-label" for="colAcciones">Acciones</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <button id="eliminarTodosBtn" class="btn btn-danger btnEliminarTodos my-4">Eliminar Todos</button>
+
+        <div class="table-container">
+            <div class="table-responsive">
+                <table id="cryptosTable" class="table table-striped table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Símbolo</th>
+                            <th>Fecha Creacion</th>
+                            <th>Precio Actual</th>
+                            <th>Consenso</th>
+                            <th>Cantidad Circulacion</th>
+                            <th>Algoritmo</th>
+                            <th>Sitio Web</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white py-3">
+        <div class="container d-flex justify-content-between">
+            <nav class="links">
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Anuncio</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <span>&copy Todos los derechos reservados 2024</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

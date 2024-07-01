@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(196, 96, 157);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background-image: url("../assets/background.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 20rem;
+}
+
+.logo img {
+    width: 11rem;
+}
+
+.logo h1 {
+    font-size: 1.7rem;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 2rem;
+    color: white;
+    font-family: sans-serif;
+    margin: 2rem 3rem;
+}
+
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ccc;
+}
+
+fieldset {
+    border: 1px solid #000000;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+legend {
+    padding: 0 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btnEliminarTodos {
+    width: auto;
+    margin-left: 4rem;
+    padding: 10px 20px;
+}
+
+.table-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(124, 119, 124); /* Cambia el color de fondo */
+    padding: 20px; /* Añade un poco de padding alrededor de la tabla */
+    border-radius: 10px; /* Añade bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añade una sombra suave */
+}
+
+table {
+    width: 100%; /* Cambiado para que la tabla ocupe todo el ancho del contenedor */
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead th {
+    padding: 10px;
+    text-align: left;
+}
+
+tbody tr {
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+    background-color: #3a4661;
+}
+
+tbody td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+footer {
+    background-color: #000000;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer span {
+    color: #fff;
+    margin-top: 2rem;
+    margin-right: 1rem;
+}
